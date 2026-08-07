@@ -47,5 +47,8 @@
       "import": "./dist/index.mjs"
     },
     "./package.json": "./package.json"
+  },
+  "config": {
+    "protocVersion": "34.1"
   }
 }
