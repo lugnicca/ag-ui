@@ -792,3 +792,11 @@ static AGUI.Abstractions.AGUIJsonUtilities.RegisterInterruptContentTypes(System.
 AGUI.Abstractions.RunFinishedOutcomeTypes
 const AGUI.Abstractions.RunFinishedOutcomeTypes.Interrupt = "interrupt" -> string!
 const AGUI.Abstractions.RunFinishedOutcomeTypes.Success = "success" -> string!
+AGUI.Abstractions.AGUIMetadata
+const AGUI.Abstractions.AGUIMetadata.ReservedKey = "ag-ui" -> string!
+AGUI.Abstractions.BaseEvent.Metadata.get -> System.Text.Json.JsonElement?
+AGUI.Abstractions.BaseEvent.Metadata.set -> void
+AGUI.Abstractions.AGUIMessage.Metadata.get -> System.Text.Json.JsonElement?
+AGUI.Abstractions.AGUIMessage.Metadata.set -> void
+AGUI.Abstractions.AGUIToolCall.Metadata.get -> System.Text.Json.JsonElement?
+AGUI.Abstractions.AGUIToolCall.Metadata.set -> void
