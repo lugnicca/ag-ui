@@ -248,6 +248,10 @@ jobs:
         with:
           version: ${{ env.UV_VERSION }}
           python-version: ${{ env.PYTHON_VERSION }}
+          # A TypeScript-only scope never runs uv, so the cache dir is never
+          # created and setup-uv's post step errors out ("Cache path ... does not
+          # exist on disk"), failing this job AFTER a successful build.
+          ignore-nothing-to-cache: true
 
       - name: Setup Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
@@ -1072,6 +1076,7 @@ jobs:
         with:
           version: ${{ env.UV_VERSION }}
           python-version: ${{ env.PYTHON_VERSION }}
+          ignore-nothing-to-cache: true
 
       - name: Download Python build artifacts (stable)
         if: needs.build.outputs.mode == 'stable' && needs.build.outputs.py_count != '0'
